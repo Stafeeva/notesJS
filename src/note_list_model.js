@@ -1,17 +1,16 @@
 (function(exports) {
 
-  function NoteList(){
+  function NoteList() {
     this.list = [];
+  }
+
+  NoteList.prototype.printList = function() {
+    for (var i = 0; i < this.list.length; i++) {
+      this.list[i].showText();
+    };
   };
 
 
   exports.NoteList = NoteList;
 
 })(this);
-
-NoteList.prototype.printList = function(){
-  this.list.forEach(function(note) {
-  // note.showText();
-  console.log(note.showText());
-  });
-};
