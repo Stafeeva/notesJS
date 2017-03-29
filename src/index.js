@@ -1,0 +1,1 @@
+new NoteController(new NoteList());
