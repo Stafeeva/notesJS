@@ -11,9 +11,9 @@ function  checkNoteListViewExists() {
 }
 
 function checkNoteListViewPrintsHTML() {
-  var note1 = new Note('Hello');
-  var note2 = new Note('Hello again');
   var noteList = new NoteList();
+  noteList.createNote('Hello');
+  noteList.createNote('Hello again');
   var noteListView = new NoteListView(noteList);
 
   try {
