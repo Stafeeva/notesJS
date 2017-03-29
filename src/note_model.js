@@ -8,6 +8,6 @@
 
 })(this);
 
-Note.prototype.showText = function(){
+Note.prototype.showText = function() {
   return this.text;
 };
