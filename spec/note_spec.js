@@ -1,8 +1,8 @@
-function  checkNoteMethodExists() {
+function  checkNoteExists() {
   var note = new Note("hello");
 
     try {
-      new assert(note , "not defined", "checkNoteMethodExists").isDefined()
+      new assert(note , "not defined", "checkNoteExists").isDefined()
     }
     catch(err) {
       console.log(err.message)
@@ -44,7 +44,7 @@ function checkTextInputIsPrinted() {
 
 
 
-checkNoteMethodExists();
+checkNoteExists();
 checkNoteIsString();
 checkTextInputIsStored();
 checkTextInputIsPrinted();
