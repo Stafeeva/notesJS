@@ -6,12 +6,13 @@
 
 
   NoteList.prototype.printList = function() {
-// if length is not equal to 0 do this
+  if (this.list.length != 0) {
     for ( i = 0; i < this.list.length; i++) {
       return this.list[i].showText();
-      console.log(this.list[i].showText());
-
     }
+  } else {
+    return 'Note list is empty'
+  }
   };
 
 NoteList.prototype.createNote = function(string) {

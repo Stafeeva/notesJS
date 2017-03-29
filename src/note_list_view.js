@@ -4,10 +4,10 @@
 
   }
 
-  // NoteListView.prototype.printHTML = function() {
-  //
-  // };
-  //
+  NoteListView.prototype.printHTML = function() {
+  
+  };
+
 
 
   exports.NoteListView = NoteListView;
