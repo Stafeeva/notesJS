@@ -47,6 +47,7 @@ function checkNoteListCanBePrinted() {
     }
 }
 
+
 checkNoteListExists();
 checkNoteListIsArray();
 checkNotesAreStored();
