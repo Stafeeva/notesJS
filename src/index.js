@@ -1,1 +1,1 @@
-new NoteController(new NoteList());
+(new NoteController(new NoteList())).getHTML();
