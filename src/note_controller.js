@@ -6,10 +6,9 @@
     this.noteListView = new NoteListView(noteList);
   }
 
-   NoteController.prototype.getHTML = function (noteListView) {
-     document.getElementById('app').innerHTML = this.noteListView.printHTML();
+   NoteController.prototype.getHTML = function (elementDiv) {
+     elementDiv.innerHTML = this.noteListView.printHTML();
    };
-
    exports.NoteController = NoteController;
 
 })(this);

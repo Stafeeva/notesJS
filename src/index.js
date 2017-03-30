@@ -1,1 +1,1 @@
-(new NoteController(new NoteList())).getHTML();
+(new NoteController(new NoteList())).getHTML((document.getElementById('app')));
