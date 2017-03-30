@@ -10,7 +10,7 @@ try {
 
 
 function checkSingleNoteIsDisplayedAsHTML() {
-  var note = new Note('test note');
+  var note = new Note('Favourite drink: seltzer');
   noteView = new SingleNoteView(note);
 
   try {
