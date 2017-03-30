@@ -1,14 +1,12 @@
 (function(exports) {
 
-
   function NoteController(noteList) {
-    note = noteList.createNote("Favourite drink: seltzer");
-    noteListView = new NoteListView(notelist);
+    noteList.createNote("Favourite drink: seltzer");
+    var noteListView = new NoteListView(noteList);
 
-   NoteController.prototype.getHTML = function (noteListView) {
-     document.getElementById('app').innerHTML = noteListView;
+   NoteController.prototype.getHTML = function () {
+     document.getElementById('app').innerHTML = noteListView.printHTML();
    };
-
-
   }
+  exports.NoteController = NoteController;
 })(this);
