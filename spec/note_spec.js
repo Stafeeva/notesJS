@@ -42,11 +42,11 @@ function checkTextInputIsPrinted() {
   }
 };
 
-function CheckNoteIs20Characters(){
+function checkNoteIs20Characters(){
   var note = new Note("Roar goes the lion, baa goes the sheep, meow goes the cat ");
-  
+
   try{
-    new assert (note.showText().length ===20, "not 20", "CheckNoteIs20Characters").isTrue()
+    new assert (note.showText().length === 20, "not 20", "checkNoteIs20Characters").isTrue()
     }
     catch(err) {
       console.log(err.message)
@@ -58,4 +58,4 @@ checkNoteExists();
 checkNoteIsString();
 checkTextInputIsStored();
 checkTextInputIsPrinted();
-CheckNoteIs20Characters();
+checkNoteIs20Characters();
