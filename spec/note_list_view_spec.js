@@ -17,7 +17,7 @@ function checkNoteListViewPrintsHTML() {
   var noteListView = new NoteListView(noteList);
 
   try {
-    new assert(noteListView.printHTML() == '<ul><li><div>Hello</div></li><li><div>Hello again</div></li></ul>'  , "HTML string not printed", "checkNoteListViewPrintsHTML").isTrue();
+    new assert(noteListView.printHTML() == '<ul><li>Hello</li><li>Hello again</li></ul>', "HTML string not printed", "checkNoteListViewPrintsHTML").isTrue();
   }
   catch(err) {
     console.log(err.message);
