@@ -8,7 +8,7 @@
   NoteList.prototype.printList = function() {
     if (this.list.length !== 0) {
       for ( i = 0; i < this.list.length; i++) {
-        return this.list[i].showText().slice(0, 20);
+        return this.list[i].showText();
       }
     } else {
       return 'Note list is empty';

@@ -28,9 +28,16 @@
   };
 
   NoteController.prototype.showNoteForCurrentUrl = function(location, elementDiv) {
-    var id = this.getNoteIdFromUrl(location)
-    var note = this.getNoteById(id)
-    this.getHTMLForSingleNote(note, elementDiv)
+    var id = this.getNoteIdFromUrl(location);
+    var note = this.getNoteById(id);
+    this.getHTMLForSingleNote(note, elementDiv);
+  };
+
+  NoteController.prototype.makeUrlChangeShowNote = function () {
+    var controller = this;
+    window.addEventListener("hashchange", function(){
+      controller.showNoteForCurrentUrl(window.location, document.getElementById("note"));
+    });
   };
 
   exports.NoteController = NoteController;
