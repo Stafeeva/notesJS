@@ -22,11 +22,22 @@ function  checkNoteListIsArray() {
 
 function checkNotesAreStored() {
   var noteList = new NoteList();
-  var note = new Note("Roar");
-  noteList.list.push(note);
+  noteList.createNote("Roar")
 
     try {
       new assert(noteList.list[0].showText() == "Roar", "note not stored", "checkNotesAreStored").isTrue();
+    }
+    catch(err) {
+      console.log(err.message);
+    }
+}
+
+function checkNoteIdIsCorrect() {
+  var noteList = new NoteList();
+  noteList.createNote("Roar")
+
+    try {
+      new assert(noteList.list[0].id == 1, "note id not stored", "checkNoteIdIsCorrect").isTrue();
     }
     catch(err) {
       console.log(err.message);
@@ -51,4 +62,5 @@ function checkNoteListCanBePrinted() {
 checkNoteListExists();
 checkNoteListIsArray();
 checkNotesAreStored();
+checkNoteIdIsCorrect()
 checkNoteListCanBePrinted();

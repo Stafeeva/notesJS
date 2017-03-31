@@ -20,7 +20,7 @@ function  checkControllerCanPrintHTML() {
   noteController.getHTML(elementDiv);
  console.log(elementDiv.innerHTML)
   try {
-    new assert( elementDiv.innerHTML === '<ul><li>Favourite drink: seltzer</li></ul>' , "Can't print HTML", "checkControllerCanPrintHTML").isTrue();
+    new assert( elementDiv.innerHTML === '<ul><li>Favourite drink: sel</li></ul>' , "Can't print HTML", "checkControllerCanPrintHTML").isTrue();
   }
   catch(err) {
     console.log(err.message);

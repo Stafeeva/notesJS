@@ -31,6 +31,17 @@ function  checkTextInputIsStored() {
     }
 };
 
+function  checkIdIsStored() {
+  var note = new Note("hello", 1);
+
+    try {
+      new assert(note.id === 1, "not true", "checkIdIsStored").isTrue()
+    }
+    catch(err) {
+      console.log(err.message)
+    }
+};
+
 function checkTextInputIsPrinted() {
   var note = new Note("roar");
 
@@ -57,5 +68,6 @@ function checkNoteIs20Characters(){
 checkNoteExists();
 checkNoteIsString();
 checkTextInputIsStored();
+checkIdIsStored()
 checkTextInputIsPrinted();
 checkNoteIs20Characters();
