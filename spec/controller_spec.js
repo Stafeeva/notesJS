@@ -69,9 +69,30 @@ function checkGetNoteById() {
   }
 }
 
+function checkNoteCanBeDisplayedById() {
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+  noteController.createNote("Favourite drink: gin", 1);
+  var elementDiv = function() {
+    this.innerHTML = ''
+  };
+  function DummyLocation() {
+    this.hash = "#notes/1";
+  }
+  var dummyLocation = new DummyLocation();
+  noteController.showNoteForCurrentUrl(dummyLocation, elementDiv);
+  try {
+    new assert( elementDiv.innerHTML === "<div>Favourite drink: gin</div>" , "Note is not displayed", "checkNoteCanBeDisplayedById").isTrue();
+  }
+  catch(err) {
+    console.log(err.message);
+  }
+}
+
 
 checkControllerExists();
 checkControllerCanPrintHTML();
 checkControllerCanDisplaySingleNote();
 checkCorrectIdLoadedFromUrl();
 checkGetNoteById();
+checkNoteCanBeDisplayedById();

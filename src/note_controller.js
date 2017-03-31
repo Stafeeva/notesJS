@@ -27,6 +27,12 @@
     return this.noteList.list[id - 1];
   };
 
+  NoteController.prototype.showNoteForCurrentUrl = function(location, elementDiv) {
+    var id = this.getNoteIdFromUrl(location)
+    var note = this.getNoteById(id)
+    this.getHTMLForSingleNote(note, elementDiv)
+  };
+
   exports.NoteController = NoteController;
 
 })(this);
