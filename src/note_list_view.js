@@ -8,7 +8,7 @@
     var list = '<ul>'
     if (this.noteList.list.length != 0) {
       for ( i = 0; i < this.noteList.list.length; i++) {
-         list += '<li>' + this.noteList.list[i].showText() + '</li>';
+         list += "<li><a href='#notes/" + (i + 1) + "'>" + this.noteList.list[i].showText() + '</a></li>';
       }
       return list + '</ul>'
     } else {

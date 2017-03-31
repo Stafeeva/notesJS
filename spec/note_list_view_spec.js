@@ -10,14 +10,14 @@ function  checkNoteListViewExists() {
     }
 }
 
-function checkNoteListViewPrintsHTML() {
+function checkNoteListViewPrintsHTMLWithLinks() {
   var noteList = new NoteList();
   noteList.createNote('Hello');
   noteList.createNote('Hello again');
   var noteListView = new NoteListView(noteList);
 
   try {
-    new assert(noteListView.printHTML() == '<ul><li>Hello</li><li>Hello again</li></ul>', "HTML string not printed", "checkNoteListViewPrintsHTML").isTrue();
+    new assert(noteListView.printHTML() == "<ul><li><a href='#notes/1'>Hello</a></li><li><a href='#notes/2'>Hello again</a></li></ul>", "HTML string not printed", "checkNoteListViewPrintsHTMLWithLinks").isTrue();
   }
   catch(err) {
     console.log(err.message);
@@ -27,4 +27,4 @@ function checkNoteListViewPrintsHTML() {
 
 
 checkNoteListViewExists();
-checkNoteListViewPrintsHTML();
+checkNoteListViewPrintsHTMLWithLinks();
