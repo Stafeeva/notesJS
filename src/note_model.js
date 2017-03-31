@@ -10,5 +10,5 @@
 })(this);
 
 Note.prototype.showText = function() {
-  return this.text.slice(0, 20);
+  return this.text;
 };

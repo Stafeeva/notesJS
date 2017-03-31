@@ -2,13 +2,23 @@
 
 
   function NoteController(noteList) {
-    noteList.createNote("Favourite drink: seltzer");
+    this.noteList = noteList;
     this.noteListView = new NoteListView(noteList);
   }
 
-   NoteController.prototype.getHTML = function (elementDiv) {
+  NoteController.prototype.createNote = function (string) {
+    this.noteList.createNote(string);
+  };
+
+  NoteController.prototype.getHTML = function (elementDiv) {
      elementDiv.innerHTML = this.noteListView.printHTML();
-   };
-   exports.NoteController = NoteController;
+  };
+
+  NoteController.prototype.getHTMLForSingleNote = function (note, elementDiv) {
+     var view = new SingleNoteView(note);
+     return elementDiv.innerHTML = view.printHTML();
+  };
+
+  exports.NoteController = NoteController;
 
 })(this);

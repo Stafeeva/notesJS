@@ -14,7 +14,7 @@ function checkSingleNoteIsDisplayedAsHTML() {
   noteView = new SingleNoteView(note);
 
   try {
-    new assert(noteView.printHTML() === '<div>Favourite drink: sel</div>', "HTML string not printed", "checkSingleNoteIsDisplayedAsHTML").isTrue();
+    new assert(noteView.printHTML() === '<div>Favourite drink: seltzer</div>', "HTML string not printed", "checkSingleNoteIsDisplayedAsHTML").isTrue();
   }
   catch(err) {
     console.log(err.message);
