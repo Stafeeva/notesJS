@@ -1,1 +1,5 @@
-(new NoteController(new NoteList())).getHTML((document.getElementById('app')));
+
+var controller = (new NoteController(new NoteList()))
+
+controller.createNote("hello")
+controller.getHTML((document.getElementById('app')));

@@ -30,14 +30,39 @@ function  checkControllerCanPrintHTML() {
 function  checkControllerCanDisplaySingleNote() {
   var noteList = new NoteList();
   var noteController = new NoteController(noteList);
-  var elementDiv = function() {
-    this.innerHTML = ''
-  };
-  var note = new Note('Favourite drink: cola')
-  console.log(noteController.getHTMLForSingleNote(note, elementDiv))
+  var elementDiv = function() {};
+  var note = new Note('Favourite drink: cola');
   noteController.getHTMLForSingleNote(note, elementDiv);
   try {
     new assert( elementDiv.innerHTML === "<div>Favourite drink: cola</div>" , "Can't display a note", "checkControllerCanDisplaySingleNote").isTrue();
+  }
+  catch(err) {
+    console.log(err.message);
+  }
+}
+
+function checkCorrectIdLoadedFromUrl() {
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+  function DummyLocation() {
+    this.hash = "#notes/1";
+  }
+  var dummyLocation = new DummyLocation();
+  try {
+    new assert( noteController.getNoteIdFromUrl(dummyLocation) === "1" , "Can't get id", "checkControllerCanDisplaySingleNote").isTrue();
+  }
+  catch(err) {
+    console.log(err.message);
+  }
+}
+
+function checkGetNoteById() {
+  var noteList = new NoteList();
+  var noteController = new NoteController(noteList);
+  noteController.createNote("Favourite drink: gin", 1);
+  var note = noteController.noteList.list[0];
+  try {
+    new assert( noteController.getNoteById(1) === note , "Can't get note", "checkGetNoteById").isTrue();
   }
   catch(err) {
     console.log(err.message);
@@ -48,3 +73,5 @@ function  checkControllerCanDisplaySingleNote() {
 checkControllerExists();
 checkControllerCanPrintHTML();
 checkControllerCanDisplaySingleNote();
+checkCorrectIdLoadedFromUrl();
+checkGetNoteById();

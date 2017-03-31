@@ -16,7 +16,15 @@
 
   NoteController.prototype.getHTMLForSingleNote = function (note, elementDiv) {
      var view = new SingleNoteView(note);
-     return elementDiv.innerHTML = view.printHTML();
+     elementDiv.innerHTML = view.printHTML();
+  };
+
+  NoteController.prototype.getNoteIdFromUrl = function (location) {
+    return location.hash.split("/")[1];
+  };
+
+  NoteController.prototype.getNoteById = function (id) {
+    return this.noteList.list[id - 1];
   };
 
   exports.NoteController = NoteController;
